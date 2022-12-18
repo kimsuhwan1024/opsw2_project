@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <!--header-->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="main">WEBCO</a>
+
+            <div class="d-flex flex-row-reverse">
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"  href="main">메인</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="board">게시판</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="study">예제</a>
+                        </li>
+                        <li class="nav-item">
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="bodermain">
+        <div class="container-fluid">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">제목</th>
+                        <th scope="col-6">내용</th>
+                        <th scope="col">글쓴이</th>
+                        <th scope="col">작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <% for (var i = 0; i < loginfo.length; i ++) { %> 
+                        <tr>
+                        <td>  <%= loginfo[i].title %></td>
+                        <a href="#" ><td><%= loginfo[i].contents %></td></a>
+                        <td><%= loginfo[i].writer %></td>
+                        <td><%= loginfo[i].writeday %></td>
+                    </tr>
+                        <% } %>   
+                    
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <div class="pagetap">
+        <div class="row">
+
+            <div class="col">
+                <div class="d-flex flex-row-reverse">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-row-reverse">
+                    <a href="write"><button type="button" class="btn btn-light">글작성</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
